@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+//The first route /new_ticket will show the form to open a new ticket while the second route will call the store() on TicketsController which will do the actual storing of the ticket in the database.
+
+Route::get('/new_ticket', 'TicketsController@create');
+
+Route::post('/new_ticket_store', 'TicketsController@store');
